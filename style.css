@@ -1,9 +1,9 @@
 body {
-    background-color: #ffb6c1;
-    background-image: url('bg.png'); /* Ensure your bg.png is in the repo */
+    background-image: url('bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
@@ -22,7 +22,7 @@ body {
     gap: 15px;
 }
 
-/* 2x2 Grid Structure */
+/* 2x2 Grid Layout */
 .envelope-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -53,7 +53,7 @@ body {
     min-height: 70px;
 }
 
-/* Envelope Flap Lines (The X pattern) */
+/* Envelope Flap Lines */
 .envelope::before, .envelope::after {
     content: '';
     position: absolute;
@@ -84,7 +84,7 @@ body {
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* Modal Styling */
+/* Modal Popup Styling */
 .modal {
     display: none;
     position: fixed;
