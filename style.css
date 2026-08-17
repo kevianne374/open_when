@@ -1,20 +1,18 @@
 body {
-    background-image: url('./bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffb1c8;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23ff9ebb"/><rect x="0" y="0" width="50" height="50" fill="%23ffb1c8"/><rect x="50" y="50" width="50" height="50" fill="%23ffb1c8"/></svg>');
+    background-size: 20px 20px;
 }
 
 .container {
-    max-width: 500px;
+    max-width: 480px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -22,7 +20,12 @@ body {
     gap: 15px;
 }
 
-/* 2x2 Grid Layout */
+/* Top Envelope Centered */
+.top-envelope {
+    width: 55%;
+}
+
+/* 2x2 Layout Grid */
 .envelope-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -30,95 +33,101 @@ body {
     width: 100%;
 }
 
-/* Top Centered Envelope */
-.top-envelope {
-    width: 60%;
-}
-
-/* Envelope Styling */
+/* Pixel Envelope Box */
 .envelope {
     position: relative;
     background: #ffffff;
-    border: 3px dashed #ff8fa3;
+    border: 3px dashed #ff5c8d;
     border-radius: 12px;
-    padding: 25px 15px;
+    padding: 22px 12px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden;
+    box-shadow: 0 6px 0px #e04374, 0 10px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70px;
+    min-height: 75px;
+    box-sizing: border-box;
 }
 
-/* Envelope Flap Lines */
+/* Envelope Flap Lines (X Pattern) */
 .envelope::before, .envelope::after {
     content: '';
     position: absolute;
     top: 0;
     width: 50%;
     height: 100%;
-    border-top: 1px solid rgba(255, 143, 163, 0.3);
     pointer-events: none;
 }
+
 .envelope::before {
     left: 0;
-    border-right: 1px solid rgba(255, 143, 163, 0.3);
+    border-right: 1.5px dashed rgba(255, 92, 141, 0.35);
+    border-bottom: 1.5px dashed rgba(255, 92, 141, 0.35);
 }
+
 .envelope::after {
     right: 0;
-    border-left: 1px solid rgba(255, 143, 163, 0.3);
+    border-left: 1.5px dashed rgba(255, 92, 141, 0.35);
+    border-bottom: 1.5px dashed rgba(255, 92, 141, 0.35);
 }
 
 .envelope span {
     font-weight: 700;
-    font-size: 16px;
-    color: #a4133c;
+    font-size: 15px;
+    color: #800f2f;
     z-index: 1;
+    line-height: 1.3;
 }
 
 .envelope:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0px #e04374, 0 12px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* Modal Popup Styling */
+.envelope:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0px #e04374;
+}
+
+/* Pop-up Window */
 .modal {
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 100;
 }
 
 .modal-content {
-    background: white;
+    background: #ffffff;
+    border: 3px solid #ff5c8d;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 16px;
     max-width: 80%;
     text-align: left;
     position: relative;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .modal-content h3 {
     margin-top: 0;
-    color: #ff4d6d;
+    color: #c9184a;
 }
 
 .modal-content p {
-    color: #444;
+    color: #333333;
     line-height: 1.6;
 }
 
 .close-btn {
     position: absolute;
     top: 10px; right: 15px;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
-    color: #888;
+    color: #ff5c8d;
+    font-weight: bold;
 }
