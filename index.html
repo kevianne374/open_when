@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open When... 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Open When... 💌</h2>
+        <div class="envelope-grid">
+            <div class="envelope" onclick="openLetter('miss')">
+                <span>...you miss me 💭</span>
+            </div>
+            <div class="envelope" onclick="openLetter('sad')">
+                <span>...you had a hard day 🩹</span>
+            </div>
+            <div class="envelope" onclick="openLetter('laugh')">
+                <span>...you need a laugh 😂</span>
+            </div>
+            <div class="envelope" onclick="openLetter('voice')">
+                <span>...you want to hear my voice 🎙️</span>
+            </div>
+        </div>
+
+        <!-- Popup Modal for Letters -->
+        <div id="letterModal" class="modal" onclick="closeLetter()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close-btn" onclick="closeLetter()">&times;</span>
+                <h3 id="letterTitle">Letter</h3>
+                <p id="letterBody">Letter content goes here...</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
