@@ -8,23 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <h2>Open When... 💌</h2>
+        <!-- Top Envelope -->
+        <div class="envelope top-envelope" onclick="openLetter('miss')">
+            <div class="envelope-flap"></div>
+            <span>...you miss me 💭</span>
+        </div>
+
+        <!-- 2x2 Grid Envelopes -->
         <div class="envelope-grid">
-            <div class="envelope" onclick="openLetter('miss')">
-                <span>...you miss me 💭</span>
+            <div class="envelope" onclick="openLetter('sad')">
+                <div class="envelope-flap"></div>
+                <span>...you had a hard day 🩹</span>
             </div>
             <div class="envelope" onclick="openLetter('sad')">
+                <div class="envelope-flap"></div>
                 <span>...you had a hard day 🩹</span>
             </div>
             <div class="envelope" onclick="openLetter('laugh')">
+                <div class="envelope-flap"></div>
                 <span>...you need a laugh 😂</span>
             </div>
             <div class="envelope" onclick="openLetter('voice')">
+                <div class="envelope-flap"></div>
                 <span>...you want to hear my voice 🎙️</span>
             </div>
         </div>
 
-        <!-- Popup Modal for Letters -->
+        <!-- Popup Modal -->
         <div id="letterModal" class="modal" onclick="closeLetter()">
             <div class="modal-content" onclick="event.stopPropagation()">
                 <span class="close-btn" onclick="closeLetter()">&times;</span>
